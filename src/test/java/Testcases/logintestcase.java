@@ -33,6 +33,7 @@ public class logintestcase extends baseclass {
       LoginPageObjects lpo= new LoginPageObjects(driver);
       lpo.EnterUserName().sendKeys(Constants.Invalidusername);
       lpo.EnterPassword().sendKeys(Constants.InvalidPassword);
+      lpo.errorMessage().sendKeys(Constants.InvalidErrorExpected);
       lpo.Login().click();
 	
 	

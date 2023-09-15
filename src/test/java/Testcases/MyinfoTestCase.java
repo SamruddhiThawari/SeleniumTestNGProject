@@ -31,10 +31,13 @@ public class MyinfoTestCase extends baseclass{
 	driver.manage().window().maximize();
 		
 	Thread.sleep(2000);
+	//valid login testcase
  LoginPageObjects lpo= new LoginPageObjects(driver);
  lpo.EnterUserName().sendKeys("Admin");
  lpo.EnterPassword().sendKeys("admin123");
  lpo.Login().click();
+
+ 
 	MyinfoPageObject mpo= new MyinfoPageObject(driver);
 	Thread.sleep(2000);
 	mpo.ClickOnMyinfo().click();
@@ -67,15 +70,17 @@ List<WebElement> obj2= mpo.BloodGroup();
 		break;
 		}
 	}
-	
-	 driver.findElement(By.xpath("//input[@placeholder='First Name']")).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
+	//first name middle name last name
+	/* driver.findElement(By.xpath("//input[@placeholder='First Name']")).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
 	 driver.findElement(By.xpath("//input[@placeholder='First Name']")).sendKeys( "Sasha");
 	 driver.findElement(By.xpath("//input[@placeholder='Middle Name']")).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
 	 driver.findElement(By.xpath("//input[@placeholder='Middle Name']")).sendKeys("Ak");
 	 driver.findElement(By.xpath("//input[@placeholder='Last Name']")).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
 	 driver.findElement(By.xpath("//input[@placeholder='Last Name']")).sendKeys("Sharma");
+	 //Nickname
 	 driver.findElement(By.xpath("(//input[@class='oxd-input oxd-input--active'])[2]")).sendKeys("Nitin");
 	 Thread.sleep(5000);
+	 //Employee ID
 	 driver.findElement(By.xpath("(//div[@data-v-957b4417='']/input)[5]")).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE)); Thread.sleep(5000);
 	 driver.findElement(By.xpath("(//div[@data-v-957b4417='']/input)[5]")).sendKeys("004");
 	 Thread.sleep(2000); driver.findElement(By.xpath("(//input[@class='oxd-input oxd-input--active'])[3]")).sendKeys("23");

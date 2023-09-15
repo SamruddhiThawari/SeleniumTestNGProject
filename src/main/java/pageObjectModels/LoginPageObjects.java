@@ -13,7 +13,7 @@ public class LoginPageObjects {
 	
 	private By login= By.xpath("//button[@type='submit']");
 	
-	
+	private By errorMessage= By.xpath("//p[@class='oxd-text oxd-text--p oxd-alert-content-text']");
 	
 	public LoginPageObjects(WebDriver driver2) {
 		this.driver=driver2;
@@ -32,6 +32,9 @@ public class LoginPageObjects {
 		return driver.findElement(login);
 		
 	}
-	
+	public WebElement errorMessage() {
+		return driver.findElement(errorMessage);
+		
+	}
 
 }

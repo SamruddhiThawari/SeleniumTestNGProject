@@ -20,7 +20,7 @@ public class baseclass {
 	  FileInputStream fis = new FileInputStream(
 	    System.getProperty("user.dir") + "\\src\\main\\java\\Resources\\data.properties");
 
-	   prop = new Properties();
+	   prop = new Properties(); 
 
 	  prop.load(fis);
 
