@@ -13,30 +13,39 @@ import pageObjectModels.LoginPageObjects;
 
 public class logintestcase extends baseclass {
 	
-	@Test(priority=0)
-	
-	public void verifyValidLogin() throws IOException, InterruptedException {
-	Thread.sleep(2000);
-	LoginPageObjects lpo= new LoginPageObjects(driver);
-    lpo.EnterUserName().sendKeys(Constants.Validusername);
-    lpo.EnterPassword().sendKeys(Constants.ValidPassword);
-    lpo.Login().click();
-	
-    CommonMethod.handleAssertion(driver.getCurrentUrl(), Constants.dashboardUrl);
-	
-	}
-	
-	@Test(priority=1)
-     public void verifyInValidLogin() throws IOException, InterruptedException {
- 		
- 		Thread.sleep(2000);
-      LoginPageObjects lpo= new LoginPageObjects(driver);
-      lpo.EnterUserName().sendKeys(Constants.Invalidusername);
-      lpo.EnterPassword().sendKeys(Constants.InvalidPassword);
-      lpo.errorMessage().sendKeys(Constants.InvalidErrorExpected);
-      lpo.Login().click();
-	
-	
-	}
 
-}
+		@Test(priority = 0)
+		public void verifyValidLogin() throws IOException, InterruptedException {
+
+			Thread.sleep(2000);
+
+			LoginPageObjects lpo = new LoginPageObjects(driver);
+			lpo.EnterUserName().sendKeys(Constants.Validusername);
+			lpo.EnterPassword().sendKeys(Constants.ValidPassword);
+			lpo.Login();
+
+			CommonMethod.handleAssertion(driver.getCurrentUrl(), Constants.dashboardUrl);
+
+
+
+		}
+
+		@Test(priority = 1)
+		public void verifyInvalidValidLogin() throws IOException, InterruptedException {
+
+			Thread.sleep(2000);
+
+			LoginPageObjects lpo = new LoginPageObjects(driver);
+			lpo.EnterUserName().sendKeys(Constants.Invalidusername);
+			lpo.EnterPassword().sendKeys(Constants.InvalidPassword);
+			lpo.Login().click();
+
+			Thread.sleep(5000);
+
+			CommonMethod.handleAssertion(lpo.errorMessage().getText(), Constants.InvalidErrorExpectedText);
+
+
+
+
+		}
+		}

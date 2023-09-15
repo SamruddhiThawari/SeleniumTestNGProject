@@ -1,9 +1,13 @@
 
 package Resources;
 
+import java.time.Duration;
 import java.util.List;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 
 public class CommonMethod {
@@ -27,11 +31,14 @@ public class CommonMethod {
 				break;
 			}
 		}
+	}
+	
 		
-		
-		
-		
-		
+		public static void expWait(WebDriver driver,WebElement xpath, int timeout) {
+
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
+
+			wait.until(ExpectedConditions.elementToBeClickable(xpath));
 		
 		
 	}

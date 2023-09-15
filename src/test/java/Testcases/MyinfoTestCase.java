@@ -16,7 +16,7 @@ import java.awt.event.KeyEvent;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 
-
+import Resources.CommonMethod;
 import Resources.baseclass;
 import pageObjectModels.LoginPageObjects;
 import pageObjectModels.MyinfoPageObject;
@@ -39,39 +39,31 @@ public class MyinfoTestCase extends baseclass{
 
  
 	MyinfoPageObject mpo= new MyinfoPageObject(driver);
-	Thread.sleep(2000);
 	mpo.ClickOnMyinfo().click();
-	Thread.sleep(2000);
 
+	Thread.sleep(3000);
+
+	Thread.sleep(2000);
 	mpo.NationalityDropdown().click();
+
+	Thread.sleep(3000);
+
+	CommonMethod.handleDropdown(mpo.NationalityOptions(), "Indian");
+    CommonMethod.handleDropdown(mpo.MaritalStatus(),"Unmarried");
+    CommonMethod.handleDropdown(mpo.BloodGroup(), "O+");
 	
-	List<WebElement> obj= mpo.NationalityOptions();
 	
-	for(WebElement a:obj) {
-		if(a.getText().equalsIgnoreCase("Indian")) {
-			a.click();
-			break;
-		}
-		
-	}
-	List<WebElement> obj1= mpo.MaritalStatus();
 	
-	for(WebElement b:obj1) {
-		if(b.getText().equalsIgnoreCase("Unmarried")){
-		b.click();
-		break;
-		}
-	}
-List<WebElement> obj2= mpo.BloodGroup();
 	
-	for(WebElement c:obj2) {
-		if(c.getText().equalsIgnoreCase("O+")){
-		c.click();
-		break;
-		}
-	}
+	
+	
+	
+	
+	
+	
+	
 	//first name middle name last name
-	/* driver.findElement(By.xpath("//input[@placeholder='First Name']")).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
+	 driver.findElement(By.xpath("//input[@placeholder='First Name']")).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
 	 driver.findElement(By.xpath("//input[@placeholder='First Name']")).sendKeys( "Sasha");
 	 driver.findElement(By.xpath("//input[@placeholder='Middle Name']")).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
 	 driver.findElement(By.xpath("//input[@placeholder='Middle Name']")).sendKeys("Ak");
