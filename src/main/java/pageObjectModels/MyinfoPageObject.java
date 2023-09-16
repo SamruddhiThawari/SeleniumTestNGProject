@@ -30,7 +30,9 @@ public class MyinfoPageObject {
 	
 	private By BloodGroup= By.xpath("(//i[@class='oxd-icon bi-caret-down-fill oxd-select-text--arrow'])[3]");
 	
+	private By DriverLicence= By.xpath("(//input[@class='oxd-input oxd-input--active'])[5]");
 	
+	private By Gender= By.xpath("(//span[@class='oxd-radio-input oxd-radio-input--active --label-right oxd-radio-input'])[2]");
 	
 	public MyinfoPageObject(WebDriver driver2) {
 	this.driver=driver2;
@@ -69,5 +71,10 @@ public class MyinfoPageObject {
 	public List<WebElement> BloodGroup(){
 		return driver.findElements(BloodGroup);
 	}
-	
+	public WebElement DriverLicence(){
+		return driver.findElement(DriverLicence);
+	}
+	public WebElement Gender(){
+		return driver.findElement(Gender);
+	}
 }
