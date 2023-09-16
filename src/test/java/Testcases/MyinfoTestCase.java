@@ -75,7 +75,11 @@ public class MyinfoTestCase extends baseclass{
 	 //Employee ID
 	 driver.findElement(By.xpath("(//div[@data-v-957b4417='']/input)[5]")).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE)); Thread.sleep(5000);
 	 driver.findElement(By.xpath("(//div[@data-v-957b4417='']/input)[5]")).sendKeys("004");
-	 Thread.sleep(2000); driver.findElement(By.xpath("(//input[@class='oxd-input oxd-input--active'])[3]")).sendKeys("23");
+	 Thread.sleep(2000); 
+	
+	 driver.findElement(By.xpath("(//input[@class='oxd-input oxd-input--active'])[5]")).sendKeys("A678B67");
+	 driver.findElement(By.xpath("(//span[@class='oxd-radio-input oxd-radio-input--active --label-right oxd-radio-input'])[2]")).click();
+	 driver.findElement(By.xpath("(//input[@class='oxd-input oxd-input--active'])[3]")).sendKeys("23");
 			  Thread.sleep(5000);
 	driver.findElement(By.xpath("(//label[@data-v-7ef819fd=''])[2]")).click();
 	driver.findElement(By.xpath("//button[@class='oxd-button oxd-button--medium oxd-button--text']")).click(); 
